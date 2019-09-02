@@ -9,14 +9,16 @@ public class A1Novice {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		// After scanner is created, type in the code how many customers there are. 
+		
 		int count = sc.nextInt();
 		String [] first= new String[count];
 		String [] last= new String[count];
 				
 		ArrayList<Double> sum = new ArrayList<Double>(count);
-
-		//double sum = 0.0;
-
+		
+		// Type first and last name. Then type how many items they each bought.
+		
 		for (int i=0; i<count; i++) {
 			
 			first[i] = sc.next();
@@ -29,8 +31,12 @@ public class A1Novice {
 			double[] price = new double [countItems];
 			
 			double [] total = new double[countItems];
-			//double total = 0.0;
 
+			/* Define how many of each item there are, the items' names, the price of each item and 
+			 * calculate the total price for each item. When as many items are in the input as defined,
+			 * the code will repeat for each person.
+			 */
+			
 			for (int i1=0; i1<item.length; i1++) {
 										
 				howManyEachItem[i1] = sc.nextInt();
@@ -40,17 +46,18 @@ public class A1Novice {
 				price[i1] = sc.nextDouble();
 				
 				total[i1] += howManyEachItem[i1] * price[i1];
-
-				
 				
 				}
 			
+			// Uses the findSum function to add the price array for each customer
+			
 			sum.add(findSum(total));
-		// sum = total;
 			
 		}
 
 		sc.close();
+
+		// The output will print the first and last name of the customer and how much they spent in total
 
 		for(int i1=0; i1<count; i1++){			
 			
@@ -58,17 +65,8 @@ public class A1Novice {
 
 		}
 	}
-
-	/*private static String[] combineString(String[] first, String[] last) {
-		
-		int length = first.length + last.length;
-        String[] result = new String[length];
-        System.arraycopy(first, 0, result, 0, first.length);
-        System.arraycopy(last, 0, result, first.length, last.length);
-        return result;
-		
-	}*/
 	
+// Takes the sum of an array
 
 	public static double findSum(double[] array) {
 	    double total = 0.0;
